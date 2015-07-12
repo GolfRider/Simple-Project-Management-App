@@ -1,0 +1,57 @@
+
+{% extends './layouts/home_default.html' %}
+
+{% block title %}
+ {{title}}
+{% endblock %}
+
+{% block content %}
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">xNGO</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+    <div class="container" style="margin-top:5em;">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+		</div>
+        <div class="col-md-4">
+		         <form class="navbar-form navbar-right" action="signup" role="form" method="post">
+					<div class="form-group">
+					  <br/>
+					  <input type="text" placeholder="User Name" class="form-control" name="username">
+					  <input type="text" style="margin-top:0.3em" placeholder="Email" class="form-control" name="email">
+					  <input type="password" placeholder="Password" class="form-control" name="pwd" style="margin-top:0.2em">  <br/>
+					  <input type="password" style="margin-top:0.3em" placeholder="Confirm Password" class="form-control" name="confirm_pwd" style="margin-top:0.2em">  <br/>
+					  <button type="submit" style="margin-top:0.3em" class="btn btn-success" >Sign up</button>					   
+					</div>
+					
+				  </form>  
+        </div>
+        <div class="col-md-4">
+        </div>
+		
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+
+{% endblock %}

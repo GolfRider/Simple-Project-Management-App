@@ -1,0 +1,100 @@
+
+{% extends './layouts/default.html' %}
+
+{% block title %}
+ {{title}}
+{% endblock %}
+
+{% block content %}
+
+   
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+    <div class="container" style="margin-top:2em;">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-8">
+			<u><b>Task Details</b></u>
+			<ul>
+			        <table class="table table-striped">
+						<thead>
+						  <tr>
+							<th>Task Title</th>
+							<th>Task Start Date</th>
+							<th>Task End Date</th>
+							<th>Task Owner</th>
+							<th>Task Status</th>
+						  </tr>
+						</thead>
+						<tbody>
+ 
+		                
+							<tr>
+                                <td>{{task.task_title}} </td>
+							    <td>{{task.task_start_date}}</td>
+							    <td>{{task.task_end_date}}</td>
+								<td>{{task.task_owner}}</td>
+								<td>
+								     <select name="owner" class="form-control" style="margin-top:0.2em;width:12em;">
+									       <option value="-1" disabled selected>Select Task Status</option>
+									       <option value='Started'>Started </option>
+									       <option value='Progress'>Progress </option>
+									       <option value='Completed'>Completed</option>
+									  </select>
+									  
+									 
+								</td>
+				         	</tr>
+				
+                        
+
+       				</tbody>
+                </table>		
+                </ul>
+				
+				<ul>
+				   {% for comment in comments %}                              
+				    <table class="table table-striped">
+					  <tbody>
+					       <tr>
+                                <td>
+									<div>
+            							<b>{{comment.user_name}} </b>: {{comment.task_comments}}
+									</div>
+								</td>							    
+								
+				         	</tr>
+							<tr>
+                                
+				         	</tr>				
+					  </tbody>
+					  </table>
+                   {% endfor %}   
+					
+					<form action="/comment" method="post">
+					<div class="form-group">
+					  	<textarea name="task_comment" rows="3"  style="width:95%;float:right;"></textarea>					
+					    <input type="hidden" name="task_id" value="{{task_id}}" style="margin-top:0.2em">  <br/>					    
+					    <button type="submit" style="margin-top:0.3em;float:right;" class="btn btn-success" >Add Comment</button>					   
+					</div>
+					
+				  </form>
+				  
+				  
+						
+				</ul>
+
+						 
+        </div>
+        
+        <div class="col-md-4">
+      
+        </div>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+
+{% endblock %}

@@ -1,0 +1,79 @@
+
+{% extends './layouts/default.html' %}
+
+{% block title %}
+ {{title}}
+{% endblock %}
+
+{% block content %}
+
+    
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+    <div class="container" style="margin-top:2em;">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-8">
+			<u><b>List of Projects</b></u>
+			<ul>
+			        <table class="table table-striped">
+						<thead>
+						  <tr>
+							<th>#</th>
+							<th>Project Title</th>
+							<th>Project Start Date</th>
+							<th>Project End Date</th>
+							<th>Project Status</th>
+						  </tr>
+						</thead>
+						<tbody>
+        
+		
+		                {% for prj in projects %}                              
+							<tr>
+                                <td>{{prj.id}}</td>
+							    <td><a href='project/s/{{prj.id}}'>{{prj.project_title}} </a></td>
+							    <td>{{prj.project_start_date}}</td>
+							    <td>{{prj.project_end_date}}</td>
+								<td>{{prj.project_status}}</td>
+				         	</tr>
+				
+                        {% endfor %}
+ 
+ 
+                        
+
+        				</tbody>
+                     </table>		
+                     
+ 				 
+
+                  </ul>
+
+						 
+        </div>
+        
+        <div class="col-md-4">
+            <form class="navbar-form navbar-right" action="projects" role="form" method="post" style="margin:4em 0 0 1em;">
+					<div class="form-group">
+					  <input type="text" placeholder="Project Title" class="form-control" name="prj_title">
+					  <input type="text" style="margin-top:0.3em" placeholder="Start Date" class="form-control date-picker" name="start_date">
+					  <input type="text" placeholder="End Date" class="form-control date-picker" name="end_date" style="margin-top:0.2em">  <br/>					    
+					  <button type="submit" style="margin-top:0.3em" class="btn btn-success" >Create Project</button>					   
+					</div>
+					
+				  </form>
+        </div>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/js/bootstrap-datepicker.js"></script>
+<script>
+$('.date-picker').datepicker({
+    format: 'dd-mm-yyyy'
+});
+</script>
+{% endblock %}

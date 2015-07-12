@@ -1,0 +1,56 @@
+
+{% extends './layouts/default.html' %}
+
+{% block title %}
+ {{title}}
+{% endblock %}
+
+{% block content %}
+
+asd      
+	  
+	
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    
+    <div class="container" style="margin-top:5em;">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+		
+		<form method="post" id="uploadForm" action="upload" enctype="multipart/form-data">
+           <label for="upload" style="display:inline;">Upload File :</label>
+           <input type="file" name="upload" style="display:inline;" class="btn btn-lg btn-info"/><br/><br/><br/>
+           <input type="submit" value="Upload File" class="btn btn-lg btn-info"/>
+        </form>
+  
+        </div>
+        <div class="col-md-4">
+		<u>List of Documents</u>
+
+                         <ul>
+                         {% for file in files %}
+                              <li> <a href='download/{{file}}'>{{file}} </a></li>
+                        {% endfor %}
+                         </ul>
+
+
+
+
+
+		
+		
+
+          
+       </div>
+        <div class="col-md-4">
+      
+        </div>
+      </div>
+
+      <hr>
+
+      
+    </div> <!-- /container -->
+
+
+{% endblock %}

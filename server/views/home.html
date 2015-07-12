@@ -1,0 +1,60 @@
+
+{% extends './layouts/home_default.html' %}
+
+{% block title %}
+ {{title}}
+{% endblock %}
+
+{% block content %}
+   
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+	    <div class="row">
+          <div class="col-md-8"> 		
+             <h1>Welcome to xNGO</h1>
+             <p></p>
+             <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+		  </div>
+		  <div class="col-md-4">
+					<form class="navbar-form navbar-right" action="signin" role="form" method="post">
+					<div class="form-group">
+					  <br/>
+					  <input type="text" placeholder="Email" class="form-control" name="email">
+					  <input type="password" placeholder="Password" class="form-control" name="pwd" style="margin-top:0.2em">  <br/>
+					  <button type="submit" style="margin-top:0.3em" class="btn btn-success" >Sign in</button>
+					   <a href="signup" style="margin-left:1em;text-decoration:underline"><b>Sign up</b></a>
+					</div>
+					
+				  </form>
+		  </div>
+		</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Mentorship</h2>
+          <p>Mentor Programmes </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Sponsorship</h2>
+          <p>Sponsorship Programmes </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Latest Updates</h2>
+          <p>New Programme Updates</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+
+{% endblock %}
